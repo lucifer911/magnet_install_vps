@@ -10,7 +10,7 @@ Ubuntu 17.10:
 
 Ubuntu 16.04:
 -------------
-	Magnet will be compiled
+	Install dependencies and compile the Magnet
 
 
 To install following commands:
