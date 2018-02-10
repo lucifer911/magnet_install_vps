@@ -19,6 +19,7 @@ then
 	sudo apt-get update -y
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 	sudo apt-get install libminiupnpc-dev -y
+	sudo apt-get install unrar
 	#clone magnet
 	mkdir magnet
 	cd magnet
