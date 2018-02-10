@@ -1,7 +1,13 @@
 
 Auto install VPS for Magnet:
 -------------
-This script will install the Magnetd in your VPS
+This script will do:
+
+- Installs all dependencies
+- Compile or clone the Magnetd depending on the linux version
+- Requests the masternode privkey to create the magnet.conf file automatically
+- Detects your external IP and automatically includes in the magnet.conf file
+- Run magnetd with all correct settings and ready to activate the MN of your cold wallet
 
 
 Ubuntu 17.10:
