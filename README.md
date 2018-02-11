@@ -1,19 +1,35 @@
-#magnet_install_vps
-auto install VPS for Magnet
+
+Auto install VPS for Magnet:
+-------------
+This script will do:
+
+- Installs all dependencies
+- Compile or clone the Magnetd depending on the linux version
+- Requests the masternode privkey to create the magnet.conf file automatically
+- Detects your external IP and automatically includes in the magnet.conf file
+- Run magnetd with all correct settings and ready to activate the MN of your cold wallet
+
 
 Ubuntu 17.10:
+-------------
 	Install dependencies and clone complied Magnetd
 
 Ubuntu 16.04:
-	Magnet will be compiled
+-------------
+	Install dependencies and compile the Magnet
 
 
 To install following commands:
+-------------
 
-git clone https://github.com/h99178/magnet_install_vps.git
-chmod +x ~/magnet_install_vps/install_vps.sh
-~/magnet_install_vps/./install_vps.sh
+Get the source:
+
+    git clone https://github.com/h99178/magnet_install_vps.git
+    chmod +x ~/magnet_install_vps/install_vps.sh
+    ~/magnet_install_vps/./install_vps.sh
 
 
 
+VPS option
+-------------
 I recommend creating your VPS on https://www.vultr.com/?ref=7315286 only $5 USD (1GB RAM, CPU 1 core, 25GB SSD, 1000GB Bandwidth)
