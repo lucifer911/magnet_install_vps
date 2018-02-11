@@ -20,6 +20,14 @@ Ubuntu 16.04:
 	Install dependencies and compile the Magnet
 	Configure the magnet.conf according to the information provided
 
+Before install you need:
+-------------
+Generate the masternode private key in your cold wallet by following command:
+
+    masternode genkey
+
+Copy your masternode private key, you will need it when the script request.
+
 
 To install following commands:
 -------------
