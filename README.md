@@ -17,7 +17,7 @@ Ubuntu 17.10:
 
 Ubuntu 16.04:
 -------------
-	Install dependencies and compile the Magnet
+	Install dependencies and compile the Magnetd
 	Configure the magnet.conf according to the information provided
 
 Before install you need:
