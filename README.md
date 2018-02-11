@@ -10,12 +10,12 @@ This script will do:
 - Run magnetd with all correct settings and ready to activate the MN from your cold wallet
 
 
-Ubuntu 17.10:
+Ubuntu 17.10 x64:
 -------------
 	Install dependencies and clone complied Magnetd
 	Configure the magnet.conf according to the information provided
 
-Ubuntu 16.04:
+Ubuntu 16.04 x64:
 -------------
 	Install dependencies and compile the Magnetd
 	Configure the magnet.conf according to the information provided
