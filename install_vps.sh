@@ -1,7 +1,7 @@
 #!/bin/bash
 OUTPUT="$(cat /etc/*release)"
 testseq="17.10"
-#sudo apt-get install curl -y
+sudo apt-get install curl -y
 clear
 RESULT = $("n");
 EXIP="$(curl ipinfo.io/ip)"

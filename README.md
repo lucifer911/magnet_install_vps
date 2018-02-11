@@ -7,16 +7,26 @@ This script will do:
 - Compile or clone the Magnetd depending on the linux version
 - Requests the masternode privkey to create the magnet.conf file automatically
 - Detects your external IP and automatically includes in the magnet.conf file
-- Run magnetd with all correct settings and ready to activate the MN of your cold wallet
+- Run magnetd with all correct settings and ready to activate the MN from your cold wallet
 
 
 Ubuntu 17.10:
 -------------
 	Install dependencies and clone complied Magnetd
+	Configure the magnet.conf according to the information provided
 
 Ubuntu 16.04:
 -------------
-	Install dependencies and compile the Magnet
+	Install dependencies and compile the Magnetd
+	Configure the magnet.conf according to the information provided
+
+Before install you need:
+-------------
+Generate the masternode private key in your cold wallet by following command:
+
+    masternode genkey
+
+Copy your masternode private key, you will need it when the script request.
 
 
 To install following commands:
