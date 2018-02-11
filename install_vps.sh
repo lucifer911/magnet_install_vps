@@ -1,5 +1,4 @@
 #!/bin/bash
-
 OUTPUT="$(cat /etc/*release)"
 testseq="17.10"
 #sudo apt-get install curl -y
@@ -24,14 +23,12 @@ do
         read RESULT;
 
 done
-echo $PRIVKEY
-
 clear
 if [[ $OUTPUT =~ $testseq ]];
 then
 	echo "=============================================================="
 	echo "|"
-    	echo "| No need to compile, just clone Magnetd, I will do it!"
+    echo "| No need to compile, just clone Magnetd, I will do it!"
 	echo "|"	
 	echo "=============================================================="
 	sleep 10
@@ -57,7 +54,7 @@ then
 else
 	echo "=============================================================="
 	echo "|"
-    	echo "| This linux version need to compile the Magnetd, I will do it!"
+    echo "| This linux version need to compile the Magnetd, I will do it!"
 	echo "|"	
 	echo "=============================================================="
 	sleep 10
@@ -65,7 +62,7 @@ else
 	#create swap of 2GB to have enought memory to compile the Magnet
 	echo "=============================================================="
 	echo "|"
-    	echo "| Create 2GB swap to compile"
+    echo "| Create 2GB swap to compile"
 	echo "|"	
 	echo "=============================================================="
 	cd /
@@ -76,7 +73,7 @@ else
 	#installs dependencies
 	echo "=============================================================="
 	echo "|"
-    	echo "| Install dependencies"
+    echo "| Install dependencies"
 	echo "|"	
 	echo "=============================================================="
 	sudo apt-get update -y
@@ -91,14 +88,14 @@ else
 	clear
 	echo "=============================================================="
 	echo "|"
-    	echo "| Clone Magnet repository"
+    echo "| Clone Magnet repository"
 	echo "|"	
 	echo "=============================================================="
 	git clone https://github.com/magnetwork/magnet.git
 	#compile Magnetd
 	echo "=============================================================="
 	echo "|"
-    	echo "| Clone Magnet repository"
+    echo "| Clone Magnet repository"
 	echo "|"	
 	echo "=============================================================="
 	cd /
