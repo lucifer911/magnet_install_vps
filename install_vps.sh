@@ -1,6 +1,31 @@
-#!/bin/sh
+#!/bin/bash
+
 OUTPUT="$(cat /etc/*release)"
 testseq="17.10"
+#sudo apt-get install curl -y
+clear
+RESULT = $("n");
+EXIP="$(curl ipinfo.io/ip)"
+PRIVKEY="$()"
+while [[ x$RESULT != xy && x$RESULT != xY ]]
+do
+        clear
+        echo "-------------------------------------------------"
+        echo "|Setup your Masternode"
+        echo "-------------------------------------------------"
+        echo "Your External IP is: "$EXIP
+        echo "We need your masternode private key to setup it"
+        echo -n "Copy your masternode private key and paste here (single right click on putty):"
+        read PRIVKEY
+        clear
+        echo "-------------------------------------------------"
+        echo "MN private key: "$PRIVKEY
+        echo -n "Your masternode private key is correct?(y/n)"
+        read RESULT;
+
+done
+echo $PRIVKEY
+
 clear
 if [[ $OUTPUT =~ $testseq ]];
 then
@@ -19,13 +44,15 @@ then
 	sudo apt-get update -y
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 	sudo apt-get install libminiupnpc-dev -y
-	sudo apt-get install unrar
+	sudo apt-get install unrar -y
+	sudo apt-get install curl -y
 	#clone magnet
 	mkdir magnet
 	cd magnet
 	wget http://magnetwork.io/Wallets/magnet-qt-LINUX.rar
 	unrar e magnet-qt-LINUX.rar
-	chmod +x magnetd
+	chmod +x magnetd	
+	printf 'rpcallowip=127.0.0.1\nrpcport=17179\nrpcuser=/RANDOMUSERNAME/\nrpcpassword=/RANDOMPASSWORD/\nserver=1\nlisten=1\ndaemon=1\nport=17177\naddnode=146.148.79.31:17177\naddnode=104.196.202.240:17177\naddnode=35.195.167.40:17177\naddnode=35.199.188.194:17177\naddnode=104.196.155.39:17177\naddnode=35.197.228.109:17177\naddnode=35.198.35.45:17177\naddnode=52.224.232.188:17177\naddnode=150.95.198.182:17177\naddnode=45.76.181.186:17177\naddnode=108.45.164.191:17177\naddnode=45.63.28.187:17177\nexternalip='$EXIP'\nmasternodeaddr='$EXIP':17177\nmasternode=1\nmasternodeprivkey='$PRIVKEY'\n' > ~/.magnet/magnet.conf
 	./magnetd
 else
 	echo "=============================================================="
@@ -74,13 +101,16 @@ else
     echo "| Clone Magnet repository"
 	echo "|"	
 	echo "=============================================================="
+	cd /
 	cd magnet && \
 	chmod +x compile.sh && \
 	./compile.sh
 	#move magnetd file to /root/magnet/ folder
 	mkdir ~/magnet
 	mv /magnet/src/magnetd ~/magnet/magnetd
+	printf 'rpcallowip=127.0.0.1\nrpcport=17179\nrpcuser=/RANDOMUSERNAME/\nrpcpassword=/RANDOMPASSWORD/\nserver=1\nlisten=1\ndaemon=1\nport=17177\naddnode=146.148.79.31:17177\naddnode=104.196.202.240:17177\naddnode=35.195.167.40:17177\naddnode=35.199.188.194:17177\naddnode=104.196.155.39:17177\naddnode=35.197.228.109:17177\naddnode=35.198.35.45:17177\naddnode=52.224.232.188:17177\naddnode=150.95.198.182:17177\naddnode=45.76.181.186:17177\naddnode=108.45.164.191:17177\naddnode=45.63.28.187:17177\nexternalip='$EXIP'\nmasternodeaddr='$EXIP':17177\nmasternode=1\nmasternodeprivkey='$PRIVKEY'\n' > ~/.magnet/magnet.conf
 	~/magnet/./magnetd
+	
 fi
 
 
