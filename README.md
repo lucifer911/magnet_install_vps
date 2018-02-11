@@ -13,10 +13,12 @@ This script will do:
 Ubuntu 17.10:
 -------------
 	Install dependencies and clone complied Magnetd
+	Configure the magnet.conf according to the information provided
 
 Ubuntu 16.04:
 -------------
 	Install dependencies and compile the Magnet
+	Configure the magnet.conf according to the information provided
 
 
 To install following commands:
