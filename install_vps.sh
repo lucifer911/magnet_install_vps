@@ -10,11 +10,11 @@ while [[ x$RESULT != xy && x$RESULT != xY ]]
 do
         clear
         echo "-------------------------------------------------"
-        echo "|Setup your Masternode"
+        echo "|Setup your NYX Masternode"
         echo "-------------------------------------------------"
         echo "Your External IP is: "$EXIP
         echo "We need your masternode private key to setup it"
-        echo -n "Copy your masternode private key and paste here (single right click on putty):"
+        echo -n "Copy your masternode private key and paste here :"
         read PRIVKEY
         clear
         echo "-------------------------------------------------"
@@ -55,12 +55,14 @@ then
     echo "| Cloning Magnet repository"
 	echo "|"	
 	echo "=============================================================="
-	mkdir magnet
-	cd magnet
-	wget http://magnetwork.io/Wallets/magnet-qt-LINUX.rar
-	unrar e magnet-qt-LINUX.rar
-	chmod +x magnetd
-	./magnetd	
+	mkdir nyx
+	cd nyx
+	wget https://github.com/nyxpay/nyx/releases/download/v0.12.1.6/nyx-0.12.1-linux64.tar.gz
+	tar -xvf nyx-0.12.1-linux64.tar.gz
+	cd nyx-0.12.1/
+	./nyxd -daemon
+#====>>> Fix from here.
+#===>>>
 	printf 'rpcallowip=127.0.0.1\nrpcport=17179\nrpcuser=/RANDOMUSERNAME/\nrpcpassword=/RANDOMPASSWORD/\nserver=1\nlisten=1\ndaemon=1\nport=17177\naddnode=146.148.79.31:17177\naddnode=104.196.202.240:17177\naddnode=35.195.167.40:17177\naddnode=35.199.188.194:17177\naddnode=104.196.155.39:17177\naddnode=35.197.228.109:17177\naddnode=35.198.35.45:17177\naddnode=52.224.232.188:17177\naddnode=150.95.198.182:17177\naddnode=45.76.181.186:17177\naddnode=108.45.164.191:17177\naddnode=45.63.28.187:17177\nexternalip='$EXIP'\nmasternodeaddr='$EXIP':17177\nmasternode=1\nmasternodeprivkey='$PRIVKEY'\n' > ~/.magnet/magnet.conf
 	echo "=============================================================="
 	echo "|"
